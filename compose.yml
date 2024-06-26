@@ -11,9 +11,3 @@ services:
     command:
       jupyter-lab --ip 0.0.0.0 --allow-root -b localhost --NotebookApp.token=''
 
-  gradio:
-    build: ./gradio
-    image: ubuntu:latest
-    container_name: gradio
-    ports:
-      - "80:80"
