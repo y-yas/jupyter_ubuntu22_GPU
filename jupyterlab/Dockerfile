@@ -5,6 +5,8 @@ RUN apt install -y \
 	python3 \
 	python3-pip \
 	postgresql-client 
+	wget \
+    git
 RUN pip install --upgrade pip
 RUN python3 -m pip install jupyterlab psycopg2-binary pandas ipython-sql
 
