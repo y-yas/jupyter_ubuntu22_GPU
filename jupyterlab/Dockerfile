@@ -9,7 +9,6 @@ RUN apt install -y \
     git
 RUN pip install --upgrade pip
 RUN python3 -m pip install jupyterlab psycopg2-binary pandas ipython-sql
-
 RUN wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-ubuntu2204.pin
 RUN mv cuda-ubuntu2204.pin /etc/apt/preferences.d/cuda-repository-pin-600
 RUN wget https://developer.download.nvidia.com/compute/cuda/12.5.0/local_installers/cuda-repo-ubuntu2204-12-5-local_12.5.0-555.42.02-1_amd64.deb
