@@ -1,0 +1,25 @@
+services:
+  jupyterlab:
+    build: ./jupyterlab
+    image: jupyterlab-test-img
+    container_name: jupyterlab
+    working_dir: /work
+    volumes:
+      - ./data:/work
+    ports:
+      - "8888:8888"
+    command:
+      jupyter-lab --ip 0.0.0.0 --allow-root -b localhost --NotebookApp.token=''
+
+  pgdb:
+    build: ./pgvector
+    image: postgres:latest
+    container_name: pgdb
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./pgvector/data:/var/lib/postgresql/data
+      - ./pgvector/extension/vector_extension.sql:/docker-entrypoint-initdb.d/0-vector_extension.sql
+    environment:
+      POSTGRES_PASSWORD: postgres
+    restart: always
