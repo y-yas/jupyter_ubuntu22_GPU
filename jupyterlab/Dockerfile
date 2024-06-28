@@ -4,7 +4,6 @@ RUN apt-get update
 RUN apt install -y \
 	python3 \
 	python3-pip \
-	postgresql-client \
 	wget \
     git
 RUN pip install --upgrade pip
