@@ -1,7 +1,6 @@
 services:
   jupyterlab:
     build: ./jupyterlab
-    image: jupyterlab-img
     container_name: jupyterlab
     working_dir: /work
     volumes:
